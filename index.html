@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Romantik Yurak</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fbeff8;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      background: red;
+      transform: rotate(-45deg) scale(0);
+      animation: heartPop 1s ease-out forwards;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 75px;
+      top: 0;
+    }
+
+    @keyframes heartPop {
+      to {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+
+    .image-container {
+      opacity: 0;
+      animation: showImage 2s ease-out 1.5s forwards;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90vw;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes showImage {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ===== MOBIL QURILMALAR UCHUN ===== */
+    @media (max-width: 600px) {
+      .heart {
+        width: 100px;
+        height: 100px;
+      }
+
+      .heart::before,
+      .heart::after {
+        width: 100px;
+        height: 100px;
+      }
+
+      .heart::before {
+        top: -50px;
+      }
+
+      .heart::after {
+        left: 50px;
+      }
+
+      .image-container img {
+       width: 200px;
+    } }
+    img{width: 100px; margin: 0 auto; text-align: center; margin-left: 200px; display: flex;}
+  </style>
+</head>
+<body>
+
+  <div class="heart"> </div>
+
+  <div class="image-container">
+    <img src="./photo_2025-04-19_23-40-55.jpg" alt="Heart Girl">
+  </div>
+
+  <audio autoplay loop>
+    <source src="./ORIGA - Topic - Shine, my star.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
